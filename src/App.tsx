@@ -3,6 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import styled from 'styled-components'
+
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -17,19 +20,24 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
+      <StyledLink className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
-      </div>
+      </StyledLink>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
     </>
   )
 }
+
+const StyledLink = styled.div`
+  color: pink;
+  font-weight:bold;
+`;
 
 export default App

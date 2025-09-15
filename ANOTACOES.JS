@@ -21,6 +21,16 @@ Está sendo salvo somente em DEV pois não precisa ir para PRD, seria informaç�
 4 - Baixar plugin ESLint 
 5 - Criar na raiz do projeto uma pasta: .vscode. Dentro da pasta o arquivo: settings.json. Remover do gitignore o .vscode
 6 - Colar dentro do settings as informações correspondentes, assim como em esLintrc e prettierrc.
-7- 
+*/
 
+/*
+AULA 04
+
+Styled-components e AntD
+Documentação: https://ant.design/docs/react/introduce
+1- Terminal: npm install antd
+OBS: Precisa de um pre commit para evitar subir o código com erro de formatação caso esqueça de rodar manualmente o npm run lint.
+2- Instalar o Husky.
+Documentação sytle-component: https://styled-components.com/docs/basics#installation
+3- npm install styled-components
 */
