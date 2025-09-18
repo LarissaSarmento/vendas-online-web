@@ -1,32 +1,39 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// // import LoginScreen from './modules/login'
+ function Profile() {
+    return (
+            <img src="https://i.imgur.com/MK3eW3Am.jpg"
+            alt="Teste"
+             />
+    )
+}
 
-// const MyDiv = () => {
-//     return (
-//          <h1>Titulo</h1>
-//          <h2>Subtitulo</h2>
-//     )
-// }
+export default function Gallery(){ //Componente Pai e o Profile o filho
+    return (
+        <section>
+            <h1>Cientistas</h1> 
+            <Profile /> 
+            <Profile />
+            <Profile />
+            <Inicio />
+            <Lista />
+        </section>
+    )
+}
 
-// function App(){
-//     return (
-//         <div>
-//             <div>
-//                 <MyDiv />
-//             </div>
-//             <header>
-//                 <h1>Titulo</h1>
-//                 <h2>Subtitulo</h2>
-//             </header>
-//             <div>
-//                 <p>Lorem, ipsum dolor sit amet consectetur
-//                      adipisicing elit. Dolor ratione expedita consequatur deserunt ipsa minima impedit nihil fugit sunt officiis esse neque, ab beatae corporis quidem aspernatur pariatur odit ipsum?</p>
-//             </div>
-//         </div>
-//     )
-// }
+function Inicio(){
+    return(
+    <div>
+        <h1>Titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam laudantium corporis minus quos nostrum, nam nesciunt dolores dolor ex nihil eaque, reiciendis magni placeat numquam, ea voluptatum veniam assumenda consequuntur?</p>
+    </div>
 
-// export default App
+)
+}
+
+function Lista(){
+   return( <ol>
+        <li>Linha 1</li>
+        <li>Linha 2</li>
+        <li>Linha 3</li>
+    </ol>
+    )
+}
