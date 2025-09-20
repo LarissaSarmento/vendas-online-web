@@ -1,3 +1,7 @@
+import Inicio from './inicio' // Aqui importa a função default
+import { Lista } from './inicio' //Para mportar uma função especifica
+
+ 
  function Profile() {
     return (
             <img src="https://i.imgur.com/MK3eW3Am.jpg"
@@ -13,27 +17,15 @@ export default function Gallery(){ //Componente Pai e o Profile o filho
             <Profile /> 
             <Profile />
             <Profile />
-            <Inicio />
-            <Lista />
+            <Inicio titulo = "Larissa"/>
+            <Lista
+            linha1 = "Primeira Linha" 
+            linha2 = "Segunda Linha"
+            linha3 = "Linha teste"/>
+            <Lista  linha1 ="Outro teste"> <Profile /></Lista>
+            
         </section>
     )
 }
 
-function Inicio(){
-    return(
-    <div>
-        <h1>Titulo</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam laudantium corporis minus quos nostrum, nam nesciunt dolores dolor ex nihil eaque, reiciendis magni placeat numquam, ea voluptatum veniam assumenda consequuntur?</p>
-    </div>
 
-)
-}
-
-function Lista(){
-   return( <ol>
-        <li>Linha 1</li>
-        <li>Linha 2</li>
-        <li>Linha 3</li>
-    </ol>
-    )
-}
