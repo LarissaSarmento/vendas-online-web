@@ -35,8 +35,9 @@ export const ContainerLogin = styled.div`
 export const LimitedContainer = styled.div`
     width: 100%;
     max-width: 498px;
-    background-color: blue;
+    // background-color: blue;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 
 `
