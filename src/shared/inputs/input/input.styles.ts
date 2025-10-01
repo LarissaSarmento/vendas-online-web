@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const BoxInput = styled.div`
-    background:black;
+   
 `
 
 export const TitleInput = styled.h3`
@@ -11,5 +11,4 @@ export const TitleInput = styled.h3`
     font-size: 14px;
     line-height: 21px;
     margin: 8px;
-    background:black;
 `
