@@ -1,7 +1,7 @@
-import { Input  as InputAntd, InputProps as InputPropsAntd} from 'antd';
+import { Input  as InputAntd} from 'antd';
 import { BoxInput, TitleInput } from './input.styles';
 
-interface InputProps extends InputPropsAntd {
+interface InputPropss extends React.ComponentProps<typeof InputAntd>{
     title?: string;
 
 } 
@@ -9,7 +9,7 @@ interface InputProps extends InputPropsAntd {
 //Quando inserir a interrogação quer dizer que eu posso usar o title (que é uma PROP) ou não por exemplo
 //  <TitleInput>{title}</TitleInput> ou  <TitleInput/>
 
-const Input =({title, ...props}:InputProps) => {
+const Input =({title, ...props}:InputPropss) => {
     return (
     <BoxInput> 
 
@@ -23,6 +23,8 @@ const Input =({title, ...props}:InputProps) => {
     */}
 
         <InputAntd {...props} />
+        
+
     </BoxInput>
     
     )
