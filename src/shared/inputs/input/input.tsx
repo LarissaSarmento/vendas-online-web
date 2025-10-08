@@ -3,15 +3,16 @@ import { BoxInput, TitleInput } from './input.styles';
 
 interface InputPropss extends React.ComponentProps<typeof InputAntd>{
     title?: string;
+    margin?: string;
 
 } 
 // A interface é para tipar as props do componente em TS, ou seja quais propriedades o componente aceita, se é obrigatório ou não
 //Quando inserir a interrogação quer dizer que eu posso usar o title (que é uma PROP) ou não por exemplo
 //  <TitleInput>{title}</TitleInput> ou  <TitleInput/>
 
-const Input =({title, ...props}:InputPropss) => {
+const Input =({title,margin, ...props}:InputPropss) => {
     return (
-    <BoxInput> 
+    <BoxInput style={{margin}}> 
 
         {title && ( // 
             <TitleInput>{title} </TitleInput>
