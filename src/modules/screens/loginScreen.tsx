@@ -1,6 +1,8 @@
 import { BackgroundImage, ContainerLogin, ContainerLoginScreen, LimitedContainer, LogoImage, TitleLogin } from "../styles/LoginScreen.styles"
 import Input from "../../shared/inputs/input/input"
 import Button from "../../shared/buttons/button/Button"
+import { useState } from "react"
+import Flutuante from "../../shared/buttons/button/ButtonFlutuante"
 
 const LoginScreen = ()=>{
     const [username, setUsername] = useState(''); // O useState é um array que na primeira posição no caso o username é o valor dele e na segunda é modificar o valor dele
@@ -11,7 +13,7 @@ const LoginScreen = ()=>{
     } 
 
     const handlePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(event.target.value )
+        setPassword(event.target.value ) // O event.target.value é o texto que o usuário digitou
     } 
 
     const handleLogin = () => {
@@ -28,10 +30,12 @@ const LoginScreen = ()=>{
             <LogoImage src="./logo.png"/>
             <TitleLogin level={2} type="secondary">LOGIN</TitleLogin>
             <Input title="Usuário" placeholder="Digite o usuário aqui" margin='32px 0px 0px' onChange={handleUsername} value={username}/>
-            <Input type="password" title="Senha" placeholder="Digite a senha aqui"  margin='32px 0px 0px'
-             onChange={handlePassword} value={password}/>
-           <Button type="primary" margin='64px 0px 16px 0px' onclick={handleLogin}>
+            <Input type="password" title="Senha" 
+                placeholder="Digite a senha aqui"  margin='32px 0px 0px'
+                onChange={handlePassword} value={password}/>
+           <Button type="primary" margin='64px 0px 16px 0px' onClick={handleLogin}>
             Entrar</Button>
+            <Flutuante/>
             </LimitedContainer>
         </ContainerLogin>
         <BackgroundImage src="./background.jpg" />
