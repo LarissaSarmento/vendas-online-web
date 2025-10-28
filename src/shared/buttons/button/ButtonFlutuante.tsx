@@ -1,8 +1,13 @@
 import { BFlutuante } from "./button.styles";
+import { FloatButton } from "antd";
 
-const Flutuante = () =>{
+interface TipagemFloatButton extends React.ComponentProps<typeof FloatButton>{
+    padding?: string;
+}
+
+    const Flutuante = ({padding, ...props}: TipagemFloatButton) =>{
     return (
-        <BFlutuante/>
+        <BFlutuante style={{padding}}/>
     )
 }
 

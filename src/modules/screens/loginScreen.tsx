@@ -35,7 +35,7 @@ const LoginScreen = ()=>{
                 onChange={handlePassword} value={password}/>
            <Button type="primary" margin='64px 0px 16px 0px' onClick={handleLogin}>
             Entrar</Button>
-            <Flutuante/>
+            <Flutuante padding= '20px'/>
             </LimitedContainer>
         </ContainerLogin>
         <BackgroundImage src="./background.jpg" />
