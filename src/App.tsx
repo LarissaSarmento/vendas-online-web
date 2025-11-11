@@ -1,7 +1,9 @@
+import LoginScreen2 from "./modules"
 import LoginScreen from "./modules"
 
+
   function App() {
-  return <LoginScreen />
+  return <LoginScreen2 />
   }
 
 
