@@ -2,7 +2,7 @@ import { BackgroundImage, ContainerLogin, ContainerLoginScreen, LimitedContainer
 import Input from "../../shared/inputs/input/input"
 import Button from "../../shared/buttons/button/Button"
 import { useState } from "react"
-import Flutuante from "../../shared/buttons/button/ButtonFlutuante"
+import Flutuante from "../../shared/buttons/button/Button2"
 
 const LoginScreen = ()=>{
     const [username, setUsername] = useState(''); // O useState é um array que na primeira posição no caso o username é o valor dele e na segunda é modificar o valor dele

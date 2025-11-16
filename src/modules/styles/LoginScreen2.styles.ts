@@ -1,4 +1,7 @@
 import styled from "styled-components"
+import { Typography } from 'antd'
+
+const {Title} = Typography;
 
 
 export const Superior = styled.div`
@@ -7,4 +10,8 @@ export const Superior = styled.div`
     background-color: pink;
     
     `
-export const Titulo = styled.
+export const TituloLogin = styled(Title)`
+    && {
+    color:pink;
+}
+`
