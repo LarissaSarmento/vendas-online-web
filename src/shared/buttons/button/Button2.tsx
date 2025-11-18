@@ -6,7 +6,7 @@ interface TipoBotao extends React.ComponentProps<typeof Button>{
 
 const Button2 = ({children, ...props}:TipoBotao)=>{
     return(
-        <Button>{children}</Button>
+        <Button {...props}>{children}</Button>
     )
 }
 
