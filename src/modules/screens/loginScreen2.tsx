@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Button2 from "../../shared/buttons/button/Button2";
-import Input2 from "../../shared/inputs/input/input2"
+import Button2 from "../../shared/components/button/Button2";
+import Input2 from "../../shared/components/input/input2"
 import { Superior, TituloLogin } from "../styles/LoginScreen2.styles"
 import { UserOutlined } from '@ant-design/icons';
 

@@ -3,7 +3,7 @@ import LoginScreen from "./modules"
 
 
   function App() {
-  return <LoginScreen2 />
+  return <LoginScreen />
   }
 
 
