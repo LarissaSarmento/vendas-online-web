@@ -7,6 +7,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { loginRoutes } from './modules/routes';
+import { GlobalProvider } from './shared/hooks/useGlobalContext';
+import App from './App';
 
 const erroRouter = createBrowserRouter([
   {
@@ -18,12 +20,20 @@ const erroRouter = createBrowserRouter([
 
 const router = {
   ...loginRoutes,
-  ...erroRouter,
+  // ...erroRouter,
 }
  
 
+// createRoot(document.getElementById('root')!).render(
+//   <StrictMode>
+//    <GlobalProvider>
+//    <RouterProvider router={router} />
+//    </GlobalProvider>
+//   </StrictMode>,
+// )
+
+
+
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-   <RouterProvider router={router} />
-  </StrictMode>,
-)
+  <App/>
+);

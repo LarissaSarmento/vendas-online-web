@@ -1,5 +1,5 @@
 import type { ButtonProps } from "antd"
-import { BFlutuante, ButtonAntd } from "./button.styles"
+import { ButtonAntd } from "./button.styles"
 
 interface ButtonCurrentProps extends ButtonProps{
     margin?: string;
@@ -8,7 +8,7 @@ interface ButtonCurrentProps extends ButtonProps{
 const Button = ({margin, ...props}: ButtonCurrentProps) => {
     return (<div>
         <ButtonAntd style={{margin}} {...props}/>
-        <BFlutuante/></div> //Ao invés de fazer margin:margin, aceita só margin
+        </div> //Ao invés de fazer margin:margin, aceita só margin
 )}
 
 export default Button

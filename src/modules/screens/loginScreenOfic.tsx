@@ -2,11 +2,14 @@ import { BackgroundImage, ContainerLogin, ContainerLoginScreen, LimitedContainer
 import Input from "../../shared/components/input/input"
 import Button from "../../shared/components/button/Button"
 import { useState } from "react"
-import axios from 'axios';
+import { useRequests } from "../../shared/hooks/useRequests";
+import { useGlobalContext } from "../../shared/hooks/useGlobalContext";
 
 const LoginScreen = ()=>{
+    const { accessToken, setAccessToken } = useGlobalContext();
     const [email, setEmail] = useState(''); // O useState é um array que na primeira posição no caso o username é o valor dele e na segunda é modificar o valor dele
-     const [password, setPassword] = useState('');
+    const [password, setPassword] = useState('');
+    const {postRequest, loading} = useRequests()
 
     const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(event.target.value )
@@ -16,35 +19,26 @@ const LoginScreen = ()=>{
         setPassword(event.target.value ) // O event.target.value é o texto que o usuário digitou
     } 
 
-    const handleLogin = async () => {
-        await axios({
-        method: 'post',
-        url: 'http://localhost:8080/auth',
-        data: {
+    const handleLogin = () => {
+        setAccessToken('novo token')
+        postRequest('http://localhost:8080/auth', {
             "email":email,
             "password":password
-        },
         })
-        .then((result) => {
-            alert(`Fez login ${result.data.accessToken}`);
-            return result.data;
-        })
-        .catch(() =>{
-            alert('Usuário e senha inválidos')
-        })
-    };
-
+        console.log('handleLogin', handleLogin)
+    }
+        
     return (
     <ContainerLoginScreen>
         <ContainerLogin>
             <LimitedContainer> 
             <LogoImage src="./logo.png"/>
-            <TitleLogin level={2} type="secondary">LOGIN</TitleLogin>
+            <TitleLogin level={2} type="secondary">LOGIN ({accessToken})</TitleLogin>
             <Input title="Usuário" placeholder="Digite o usuário aqui" margin='32px 0px 0px' onChange={handleEmail} value={email}/>
             <Input type="password" title="Senha" 
                 placeholder="Digite a senha aqui"  margin='32px 0px 0px'
                 onChange={handlePassword} value={password}/>
-           <Button type="primary" margin='64px 0px 16px 0px' onClick={handleLogin}>
+           <Button loading={loading} type="primary" margin='64px 0px 16px 0px' onClick={handleLogin}>
             Entrar</Button>
             </LimitedContainer>
         </ContainerLogin>
