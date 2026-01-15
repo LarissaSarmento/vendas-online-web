@@ -18,10 +18,10 @@ const erroRouter = createBrowserRouter([
   },
 ]);
 
-const router = {
-  ...loginRoutes,
-  // ...erroRouter,
-}
+// const router = {
+//   ...loginRoutes,
+//   ...erroRouter,
+// }
  
 
 // createRoot(document.getElementById('root')!).render(
