@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function UseEf() {
     const [count, setcount] = useState(0)
     const [countb, setcountb] = useState(10)
-    const [user, setuser] = useState()
+    const [user, setUser] = useState<any>(null)
 
     useEffect(()=>{
         console.log('Roda a cada rendenrização')
@@ -28,7 +28,7 @@ function UseEf() {
     useEffect(() => {
         const timer = setTimeout(() => {
             console.log(`O incremento foi alterao ${count}, vezes.`)
-        }, 2000)
+        },2000)
 
         return () =>{
             clearTimeout(timer)
@@ -36,24 +36,41 @@ function UseEf() {
     }, [count])
 
     // fetch com useEffect, para requisição de api
-
-    fetch()
+    useEffect(()=>{
+         fetch("https://api.github.com/users/LarissaSarmento")
+            .then((res) => res.json())
+            .then((json) => setUser(json))
+    },[])
+   
 
     return (
-        <>
+  <>
     <div>
-        <button onClick={()=> setcount(prevCount => prevCount +1)}>
-            Renderizar
-        </button>
-        <p>{count}</p>
-         </div>
-        <div>
-        <button onClick={()=> setcountb(prevCount => prevCount +1)}>
-            RenderizarB
-        </button>
-        <p>{countb}</p>
+      <button onClick={() => setcount(prevCount => prevCount + 1)}>
+        Renderizar
+      </button>
+      <p>{count}</p>
     </div>
-    </>
-)}
+
+    <div>
+      <button onClick={() => setcountb(prevCount => prevCount + 1)}>
+        RenderizarB
+      </button>
+      <p>{countb}</p>
+    </div>
+
+    {user && (
+      <>
+        <p>Dados do usuário</p>
+        <h1>Nome: {user.name}</h1>
+        <p>
+          Site: <a href={user.blog}>{user.blog}</a>
+        </p>
+        <img src={user.avatar_url} alt="Avatar" />
+      </>
+    )}
+  </>
+);
+}
 
 export default UseEf

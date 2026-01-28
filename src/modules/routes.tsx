@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import LoginScreen from "./screens/loginScreenTes";
+import LoginScreen from "./screens/loginScreen";
 
-export const loginRoutes = createBrowserRouter([ 
+export const loginRoutes = [ 
   {
     path: "/login",
     element: <LoginScreen/>,
   },
-]); 
+]; 
